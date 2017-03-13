@@ -170,11 +170,11 @@ export class TransferHttp {
     return Observable.fromPromise(Promise.resolve(data));
   }
 
-  private setCache(key, data) {
+  private setCache(key: string, data: any) {
     return this.transferState.set(key, data);
   }
 
-  private getFromCache(key): any {
+  private getFromCache(key: string): any {
     return this.transferState.get(key);
   }
 }

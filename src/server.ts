@@ -1,4 +1,4 @@
-import { Injectable, Optional, RendererFactory2, ViewEncapsulation } from '@angular/core';
+import { Injectable, Optional, RendererFactory2, ViewEncapsulation, NgModule } from '@angular/core';
 import { PlatformState } from '@angular/platform-server';
 import { TransferState } from './transfer-state';
 

@@ -1,3 +1,4 @@
+import { NgModule } from '@angular/core';
 import { TransferState } from './transfer-state';
 
 export function getTransferState(): TransferState {
