@@ -20,4 +20,4 @@ export class BrowserTransferStateModule {
 
 }
 
-export { TransferState } from './transfer-state';
+export { TransferState, TransferHttp, TransferHttpModule } from './transfer-state';
