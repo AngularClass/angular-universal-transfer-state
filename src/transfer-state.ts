@@ -34,7 +34,7 @@ export class TransferState {
 
   toJson(): any {
     const obj: any = {};
-    Array.from(this.keys()).forEach((key: string) => obj[key] = this.get(key));
+    this._map.forEach((value: any, key: string, map: Map) => obj[key] = value);
     return obj;
   }
 
@@ -162,7 +162,9 @@ export class TransferHttp {
 
   private resolveData(key: string) {
     const data = this.getFromCache(key);
-
+    if (!data) {
+      throw new Error();
+    }
     return Observable.of(data);
   }
 
