@@ -6,6 +6,10 @@
   "main": "dist/browser.js",
   "typings": "dist/index.d.ts",
   "files": [
+    "browser.d.ts",
+    "browser.js",
+    "server.d.ts",
+    "server.js",
     "dist",
     "src"
   ],
