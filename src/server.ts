@@ -9,7 +9,7 @@ export function isTag(tagName: string, node: any): boolean {
 @Injectable()
 export class ServerTransferState extends TransferState {
     constructor( private state: PlatformState, private rendererFactory: RendererFactory2) {
-        super();
+      super();
     }
 
   /**

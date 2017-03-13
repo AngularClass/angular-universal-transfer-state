@@ -9,7 +9,7 @@ export function __getTransferState(): TransferState {
 }
 
 export function __initialize (transferState: TransferState): void {
-
+  return () => {};
 }
 
 @NgModule({

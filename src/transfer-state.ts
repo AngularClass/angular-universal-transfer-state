@@ -34,7 +34,7 @@ export class TransferState {
 
   toJson(): any {
     const obj: any = {};
-    this._map.forEach((value: any, key: string, map: Map) => obj[key] = value);
+    this._map.forEach((value: any, key: string, map: Map<string, any>) => obj[key] = value);
     return obj;
   }
 
