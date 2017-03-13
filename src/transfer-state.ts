@@ -1,7 +1,13 @@
-import { Injectable } from '@angular/core';
-import { ConnectionBackend, Http, Request, RequestOptions, RequestOptionsArgs, Response } from '@angular/http';
+import { Injectable, NgModule } from '@angular/core';
+import {
+  ConnectionBackend,
+  Http,
+  Request,
+  RequestOptions,
+  RequestOptionsArgs,
+  Response
+} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
@@ -172,3 +178,10 @@ export class TransferHttp {
     return this.transferState.get(key);
   }
 }
+
+@NgModule({
+  providers: [
+    TransferHttp
+  ]
+})
+export class TransferHttpModule {}
