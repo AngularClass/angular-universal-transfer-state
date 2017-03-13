@@ -1,0 +1,46 @@
+{
+  "name": "@angularclass/universal-transfer-state",
+  "version": "1.0.0",
+  "description": "universal-transfer-state: Angular Universal module for transfering state from server to client",
+  "main": "dist/node.js",
+  "main": "dist/browser.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "node_modules/.bin/tsc || true",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "plrepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angularclass/angular-universal-express.git"
+  },
+  "author": "PatrickJS <patrick@angularclass.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/angularclass/angular-universal-express/issues"
+  },
+  "homepage": "https://github.com/angularclass/angular-universal-express#readme",
+  "devDependencies": {
+    "@angular/common": "^4.0.0-rc.3",
+    "@angular/compiler": "^4.0.0-rc.3",
+    "@angular/core": "^4.0.0-rc.3",
+    "@angular/http": "^4.0.0-rc.3",
+    "@angular/platform-browser": "^4.0.0-rc.3",
+    "@angular/platform-browser-dynamic": "^4.0.0-rc.3",
+    "@angular/platform-server": "^4.0.0-rc.3",
+    "@angular/router": "^4.0.0-rc.3",
+    "@types/express": "^4.0.35",
+    "@types/node": "^7.0.8",
+    "rxjs": "^5.2.0",
+    "typescript": "^2.2.1",
+    "xhr2": "^0.1.4",
+    "zone.js": "~0.7.2"
+  },
+  "dependencies": {
+  }
+}
