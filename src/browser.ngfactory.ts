@@ -16,11 +16,11 @@ class BrowserTransferStateModuleInjector extends import0.ɵNgModuleInjector<impo
     super(parent,([] as any[]),([] as any[]));
   }
   get _TransferState_1():any {
-    if ((this.__TransferState_1 == null)) { (this.__TransferState_1 = import1.__getTransferState()); }
+    if ((this.__TransferState_1 == null)) { (this.__TransferState_1 = import1.getTransferState()); }
     return this.__TransferState_1;
   }
   get _APP_INITIALIZER_2():any[] {
-    if ((this.__APP_INITIALIZER_2 == null)) { (this.__APP_INITIALIZER_2 = [import1.__initialize(this._TransferState_1)]); }
+    if ((this.__APP_INITIALIZER_2 == null)) { (this.__APP_INITIALIZER_2 = [import1.getTransferInitializer(this._TransferState_1)]); }
     return this.__APP_INITIALIZER_2;
   }
   createInternal():import1.BrowserTransferStateModule {
