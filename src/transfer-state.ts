@@ -163,11 +163,7 @@ export class TransferHttp {
   private resolveData(key: string) {
     const data = this.getFromCache(key);
 
-    if (!data) {
-      throw new Error();
-    }
-
-    return Observable.fromPromise(Promise.resolve(data));
+    return Observable.of(data);
   }
 
   private setCache(key: string, data: any) {
