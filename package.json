@@ -21,14 +21,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/angularclass/angular-universal-express.git"
+    "url": "git+https://github.com/angularclass/angular-universal-transfer-state.git"
   },
   "author": "PatrickJS <patrick@angularclass.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/angularclass/angular-universal-express/issues"
+    "url": "https://github.com/angularclass/angular-universal-transfer-state/issues"
   },
-  "homepage": "https://github.com/angularclass/angular-universal-express#readme",
+  "homepage": "https://github.com/angularclass/angular-universal-transfer-state#readme",
   "devDependencies": {
     "@angular/common": "^4.0.0-rc.3",
     "@angular/compiler": "^4.0.0-rc.3",
