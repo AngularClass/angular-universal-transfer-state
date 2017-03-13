@@ -23,7 +23,8 @@
     "server.d.ts"
   ],
   "angularCompilerOptions": {
-    "strictMetadataEmit": true
+    "strictMetadataEmit": true,
+    "skipMetadataEmit" : false
   },
   "compileOnSave": false,
   "buildOnSave": false,
