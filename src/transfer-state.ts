@@ -42,7 +42,7 @@ export class TransferState {
     Object.keys(obj).forEach((key: string) => this.set(key, obj[key]));
   }
 
-  inject(): void {}
+  inject(location?: string): void {}
 }
 
 
