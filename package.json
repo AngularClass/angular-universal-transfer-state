@@ -1,6 +1,6 @@
 {
   "name": "@angularclass/universal-transfer-state",
-  "version": "1.0.11",
+  "version": "2.0.0",
   "description": "universal-transfer-state: Angular Universal module for transfering state from server to client",
   "main": "./server.js",
   "browser": "./browser.js",
