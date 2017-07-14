@@ -1,6 +1,7 @@
 import { Injectable, Optional, RendererFactory2, ViewEncapsulation, NgModule } from '@angular/core';
 import { PlatformState } from '@angular/platform-server';
 import { TransferState } from './transfer-state';
+import * as serialize from 'serialize-javascript';
 
 export function isTag(tagName: string, node: any): boolean {
   return node.type === 'tag' && node.name === tagName;
@@ -8,17 +9,34 @@ export function isTag(tagName: string, node: any): boolean {
 
 @Injectable()
 export class ServerTransferState extends TransferState {
-    constructor( private state: PlatformState, private rendererFactory: RendererFactory2) {
-      super();
-    }
+  _serialize = serialize;
+  constructor( private state: PlatformState, private rendererFactory: RendererFactory2) {
+    super();
+  }
+
+  /**
+   * Serialize state to Json string
+   */
+  stateToString(json: any, options: any = {isJSON: true}) {
+    const _json = this._serialize(json, options);
+    return _json;
+  }
+
+  getDocumentFromState(state: any = this.state) {
+    const document: any = state.getDocument();
+    return document;
+  }
+
+
 
   /**
    * Inject the State into the bottom of the <head>
    */
   inject(location?: string) {
     try {
-      const document: any = this.state.getDocument();
-      const transferStateString = JSON.stringify(this.toJson());
+      const document: any = this.getDocumentFromState(this.state);
+      const json = this.toJson();
+      const transferStateString = this.stateToString(json);
       const renderer = this.rendererFactory.createRenderer(document, {
         id: '-1',
         encapsulation: ViewEncapsulation.None,
@@ -70,6 +88,7 @@ try {
       `);
       renderer.appendChild(body, script);
       renderer.setAttribute(script, 'angular', 'universal');
+      renderer.setAttribute(script, 'angularclass', 'universal-transfer-state');
       rootNode = undefined;
       bodyNode = undefined;
       headNode = undefined;
