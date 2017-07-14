@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "es2015",
     "baseUrl": ".",
     "moduleResolution": "node",
     "declaration": true,
@@ -12,16 +12,12 @@
     "noImplicitAny": true,
     "sourceMap": true,
     "inlineSources": true,
-    "outDir": "dist",
+    "outDir": "dist/es2015",
     "rootDir": "src",
     "lib": ["es6", "dom"]
   },
-  "exclude": [
-    "node_modules",
-    "typings/main.d.ts",
-    "typings/main",
-    "browser.d.ts",
-    "server.d.ts"
+  "files": [
+    "./src/browser.ts"
   ],
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
