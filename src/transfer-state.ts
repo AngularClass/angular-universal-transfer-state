@@ -1,4 +1,4 @@
-import { Injectable, NgModule } from '@angular/core';
+import { Injectable, NgModule, Inject, Optional, Host } from '@angular/core';
 import {
   ConnectionBackend,
   Http,
@@ -12,6 +12,10 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/observable/of';
+
+function __transferStateKey(url: string, options: any): string {
+  return url + JSON.stringify(options);
+}
 
 @Injectable()
 export class TransferState {
@@ -45,13 +49,17 @@ export class TransferState {
   inject(location?: string): void {}
 }
 
-
-
 type iCallback = (uri: string | Request, body: any, options?: RequestOptionsArgs) => Observable<Response>;
 
 @Injectable()
 export class TransferHttp {
-  constructor(private http: Http, protected transferState: TransferState) {}
+  constructor(private http: Http,
+              protected transferState: TransferState,
+              @Optional() @Host() @Inject('TransferStateKey') private transferStateKey?: any) {
+    if (!this.transferStateKey) {
+      this.transferStateKey = __transferStateKey;
+    }
+  }
 
   request(uri: string | Request, options?: RequestOptionsArgs): Observable<any> {
     return this.getData(uri, options, (url: string, options: RequestOptionsArgs) => {
@@ -123,7 +131,7 @@ export class TransferHttp {
       url = uri.url;
     }
 
-    const key = url + JSON.stringify(options);
+    const key = this.transferStateKey(url, options);
 
     try {
       return this.resolveData(key);
@@ -145,7 +153,7 @@ export class TransferHttp {
       url = uri.url;
     }
 
-    const key = url + JSON.stringify(body) + JSON.stringify(options);
+    const key = this.transferStateKey(url, options);
 
     try {
 
