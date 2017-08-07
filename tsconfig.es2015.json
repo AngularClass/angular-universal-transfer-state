@@ -22,8 +22,7 @@
   ],
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
-    "skipMetadataEmit" : false,
-    "genDir": "compiled"
+    "skipMetadataEmit" : false
   },
   "compileOnSave": false,
   "buildOnSave": false,
