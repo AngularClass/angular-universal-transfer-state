@@ -11,12 +11,11 @@
     "browser.js",
     "server.d.ts",
     "server.js",
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "npm run build:es5",
+    "build": "npm run build:es5 && rm -rf ./index.ngsummary.json && rm -rf ./src/*.{ngsummary,ngfactory}.{json,ts}",
     "build:es5": "./node_modules/.bin/ngc",
     "build:es2015": "node node_modules/.bin/ngc -p tsconfig.es2015.json",
     "test": "echo \"Error: no test specified\" && exit 1",
